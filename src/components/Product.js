@@ -20,10 +20,12 @@ function Product({ id, title, price, description, category, image }) {
     const product = {
       id, 
       title, 
-      price, 
+      price,
+      rating,
       description, 
       category, 
       image,
+      hasPrime,
     };
 
     // Sending the product as an action to the REDUX store... the basket slice.
@@ -42,7 +44,7 @@ function Product({ id, title, price, description, category, image }) {
         {Array(rating)
           .fill()
           .map((_, i) => (
-            <StarIcon className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-yellow-500" />
           ))
         }
       </div>
